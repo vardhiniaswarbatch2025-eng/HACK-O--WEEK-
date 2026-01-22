@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ivory & Saffron | Nagpur Menu</title>
+
+  <style>
+    :root{
+      --bg:#faf7f2;
+      --card:#ffffff;
+      --text:#2a2a2a;
+      --muted:#6b6b6b;
+      --accent:#c59d5f;
+      --accent2:#e8d9c4;
+      --shadow: 0 10px 30px rgba(0,0,0,0.08);
+      --radius: 20px;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: "Poppins", system-ui, Arial;
+    }
+
+    body{
+      background: linear-gradient(180deg, #fff, var(--bg));
+      color: var(--text);
+    }
+
+    /* hero section */
+    .hero{
+      padding: 45px 16px 30px;
+      text-align:center;
+    }
+
+    .badge{
+      display:inline-block;
+      background: var(--accent2);
+      color: #6b4a1e;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 18px;
+    }
+
+    .hero h1{
+      font-size: 2.9rem;
+      font-family: "Georgia", serif;
+      letter-spacing: 0.7px;
+      color: #2d2d2d;
+    }
+
+    .hero p{
+      margin: 12px auto 0;
+      max-width: 820px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height:1.8;
+    }
+
+    /* main container */
+    .container{
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 20px 16px 40px;
+    }
+
+    /* info bar */
+    .info{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      justify-content:center;
+      margin-top: 18px;
+    }
+
+    .chip{
+      background: #ffffffc9;
+      border: 1px solid rgba(0,0,0,0.06);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .chip b{ color: #2a2a2a; }
+
+    /* menu section */
+    .menu-title{
+      margin-top: 35px;
+      text-align:center;
+    }
+
+    .menu-title h2{
+      font-family:"Georgia", serif;
+      font-size: 2rem;
+      color:#2a2a2a;
+    }
+
+    .menu-title p{
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .menu-grid{
+      margin-top: 20px;
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .card{
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .card h3{
+      font-size: 1.25rem;
+      font-family:"Georgia", serif;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      color: #2a2a2a;
+      border-bottom: 1px dashed rgba(0,0,0,0.15);
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 small{
+      font-family:"Poppins", sans-serif;
+      font-size: 0.9rem;
+      color: var(--accent);
+      font-weight:700;
+    }
+
+    .menu-item{
+      display:flex;
+      justify-content:space-between;
+      gap: 14px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .menu-item:last-child{
+      border-bottom:none;
+    }
+
+    .left{
+      max-width: 75%;
+    }
+
+    .name{
+      font-weight: 700;
+      font-size: 1rem;
+      color:#2a2a2a;
+    }
+
+    .desc{
+      margin-top: 4px;
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height:1.5;
+    }
+
+    .price{
+      font-weight: 800;
+      color: var(--accent);
+      white-space:nowrap;
+    }
+
+    /* map section */
+    .map-title{
+      margin-top: 40px;
+      text-align:center;
+    }
+
+    .map-title h2{
+      font-family:"Georgia", serif;
+      font-size: 2rem;
+    }
+
+    .map-title p{
+      margin-top: 8px;
+      color: var(--muted);
+    }
+
+    .map-box{
+      margin-top: 18px;
+      background: white;
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    iframe{
+      width:100%;
+      height: 330px;
+      border:0;
+    }
+
+    footer{
+      text-align:center;
+      padding: 30px 15px 45px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    footer b{ color: var(--accent); }
+
+    /* responsive */
+    @media(max-width: 900px){
+      .menu-grid{ grid-template-columns:1fr; }
+      .hero h1{ font-size: 2.3rem; }
+      .left{max-width: 70%;}
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="badge">✨ Local Restaurant Menu • Hackoweek Project</div>
+    <h1>Ivory & Saffron</h1>
+    <p>
+      Elegant flavours, warm ambience & handcrafted dishes in the heart of Nagpur.
+      Explore our single-page menu crafted with love.
+    </p>
+
+    <div class="info">
+      <div class="chip">📍 <b>Civil Lines, Nagpur</b></div>
+      <div class="chip">🕒 <b>12:00 PM – 11:00 PM</b></div>
+      <div class="chip">☎️ <b>9876543210</b></div>
+      <div class="chip">⭐ <b>Chef’s Signature Specials</b></div>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- MENU -->
+    <div class="menu-title">
+      <h2>Menu</h2>
+      <p>Curated categories with transparent pricing</p>
+    </div>
+
+    <section class="menu-grid">
+
+      <!-- Starters -->
+      <div class="card">
+        <h3>Starters <small>Veg / Non-Veg</small></h3>
+
+        <div class="menu-item">
+          <div class="left">
+            <div class="name">Paneer Tikka</div>
+            <div class="desc">Char-grilled paneer with mint chutney.</div>
+          </div>
+          <div class="price">₹220</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="left">
+            <div class="name">Crispy Corn</div>
+            <div class="desc">Golden corn tossed with herbs & spice.</div>
+          </div>
+          <div class="price">₹180</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="left">
+            <div class="name">Veg Manchurian</div>
+            <div class="desc">Crispy veg balls in spicy Indo-Chinese sauce.</div>
+          </div>
+          <div class="price">₹200</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="left">
+            <div class="name">Hara Bhara Kabab</div>
+            <div class="desc">Spinach + peas kababs, pan grilled.</div>
+          </div>
+          <div class="price">₹210</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="left">
+            <div class="name">Chicken Seekh Kebab</div>
+            <div class="desc">Smoky minced chicken kebabs.</div>
+          </div>
+          <div class="price">₹260</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="left">
+            <div class="name">Chicken 65</div>
+            <div class="desc">Spicy fried chicken with curry leaves.</div>
+          </div>
+          <div class="price">₹280</div>
+        </div>
+      </div>
+
+      <!-- Main Course -->
+      <div class="card">
+        <h3>Main Course <small>Signature Curries</small></h3>
+
+        <div class="menu-item">
+          <div class="left">
+            <div class="name">Paneer Butter Masala</div>
+            <div class="desc">Creamy tomato gravy with soft paneer.</div>
+          </div>
+          <div class="price">₹240</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="left">
+            <div class="name">Kadai Paneer</div>
+            <div class="desc">Paneer tossed with capsicum & kadai spices.</div>
+          </div>
+          <div class="price">₹260</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="left">
+            <div class="name">Dal Tadka</div>
+            <div class="desc">Tempered lentils with garlic & ghee.</div>
+          </div>
+          <div class="price">₹190</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="left">
+            <div class="name">Veg Kolhapuri</div>
+            <div class="desc">Spicy curry with traditional Kolhapuri masala.</div>
+          </div>
+          <div class="price">₹230</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="left">
+            <div class="name">Chicken Handi</div>
+            <div class="desc">Slow cooked handi style rich curry.</div>
+          </div>
+          <div class="price">₹310</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="left">
+            <div class="name">Butter Chicken</div>
+            <div class="desc">Classic creamy chicken gravy.</div>
+          </div>
+          <div class="price">₹330</div>
+        </div>
+      </div>
+
+      <!-- Breads & Rice -->
+      <div class="card">
+        <h3>Breads & Rice <small>Fresh & Hot</small></h3>
+
+        <div class="menu-item">
+          <div class="left">
+            <div class="name">Butter Naan</div>
+            <div class="desc">Soft naan brushed with butter.</div>
+          </div>
+          <div class="price">₹45</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="left">
+            <div class="name">Garlic Naan</div>
+            <div class="desc">Naan topped with garlic & coriander.</div>
+          </div>
+          <div class="price">₹55</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="left">
+            <div class="name">Tandoori Roti</div>
+            <div class="desc">Wheat roti baked in tandoor.</div>
+          </div>
+          <div class="price">₹30</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="left">
+            <div class="name">Steamed Rice</div>
+            <div class="desc">Simple basmati steamed rice.</div>
+          </div>
+          <div class="price">₹120</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="left">
+            <div class="name">Jeera Rice</div>
+            <div class="desc">Basmati rice tempered with cumin.</div>
+          </div>
+          <div class="price">₹140</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="left">
+            <div class="name">Veg Biryani</div>
+            <div class="desc">Aromatic rice with veggies & spices.</div>
+          </div>
+          <div class="price">₹220</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="left">
+            <div class="name">Chicken Biryani</div>
+            <div class="desc">Hyderabadi style chicken biryani.</div>
+          </div>
+          <div class="price">₹280</div>
+        </div>
+      </div>
+
+      <!-- Desserts & Drinks -->
+      <div class="card">
+        <h3>Desserts & Drinks <small>Sweet Finish</small></h3>
+
+        <div class="menu-item">
+          <div class="left">
+            <div class="name">Gulab Jamun</div>
+            <div class="desc">Soft dumplings soaked in rose syrup.</div>
+          </div>
+          <div class="price">₹90</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="left">
+            <div class="name">Rasgulla</div>
+            <div class="desc">Spongy cottage cheese balls in sugar syrup.</div>
+          </div>
+          <div class="price">₹95</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="left">
+            <div class="name">Brownie with Ice Cream</div>
+            <div class="desc">Chocolate brownie + vanilla scoop.</div>
+          </div>
+          <div class="price">₹160</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="left">
+            <div class="name">Masala Lemonade</div>
+            <div class="desc">Refreshing lemon + Indian masala twist.</div>
+          </div>
+          <div class="price">₹80</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="left">
+            <div class="name">Cold Coffee</div>
+            <div class="desc">Creamy chilled coffee topped with foam.</div>
+          </div>
+          <div class="price">₹120</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="left">
+            <div class="name">Buttermilk (Chaas)</div>
+            <div class="desc">Traditional cooling drink with spices.</div>
+          </div>
+          <div class="price">₹70</div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- MAP -->
+    <div class="map-title">
+      <h2>Visit Us</h2>
+      <p>We’re located at Civil Lines, Nagpur (near the city centre)</p>
+    </div>
+
+    <div class="map-box">
+      <iframe
+        src="https://www.google.com/maps?q=Civil%20Lines%20Nagpur&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 <b>Ivory & Saffron</b> • Civil Lines, Nagpur • Crafted for Hackoweek ✨
+  </footer>
+
+</body>
+</html>
