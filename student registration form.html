@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tech Fest Registration | SIT Nagpur</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(120deg, #fbd3e9, #c6d9ff, #e0c3fc);
+            background-size: 400% 400%;
+            animation: gradientMove 12s ease infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.78);
+            backdrop-filter: blur(14px);
+            padding: 32px 38px;
+            width: 370px;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.18);
+            animation: popIn 1.2s ease;
+        }
+
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.85) translateY(40px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .card h1 {
+            text-align: center;
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 6px;
+            animation: fadeDown 1.5s ease;
+        }
+
+        .card h3 {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            color: #555;
+            margin-bottom: 26px;
+            animation: fadeDown 1.8s ease;
+        }
+
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        label {
+            font-size: 13px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 11px;
+            margin: 6px 0 15px;
+            border-radius: 9px;
+            border: 1px solid #ccc;
+            outline: none;
+            font-size: 14px;
+            transition: 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            border-color: #7b6cff;
+            box-shadow: 0 0 0 3px rgba(123,108,255,0.2);
+            transform: scale(1.01);
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .college-name {
+            background: #f3f3f3;
+            color: #666;
+            cursor: not-allowed;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            background: linear-gradient(135deg, #7b6cff, #b06cff);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            animation: pulse 2.5s infinite;
+            transition: 0.3s ease;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(123,108,255,0.6); }
+            70% { box-shadow: 0 0 0 15px rgba(123,108,255,0); }
+            100% { box-shadow: 0 0 0 0 rgba(123,108,255,0); }
+        }
+
+        button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 25px rgba(123,108,255,0.45);
+        }
+
+        .footer-text {
+            text-align: center;
+            font-size: 11px;
+            color: #666;
+            margin-top: 14px;
+            animation: fadeUp 2s ease;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>Tech Fest Registration</h1>
+    <h3>Symbiosis Institute of Technology, Nagpur</h3>
+
+    <form>
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter your name" required>
+
+        <label>Email Address</label>
+        <input type="email" placeholder="example@email.com" required>
+
+        <label>Mobile Number</label>
+        <input type="tel" placeholder="10-digit number" required>
+
+        <label>College</label>
+        <input type="text" value="Symbiosis Institute of Technology, Nagpur" class="college-name" readonly>
+
+        <label>Select Event</label>
+        <select required>
+            <option value="">-- Choose Event --</option>
+            <option>Coding Challenge</option>
+            <option>Web Development</option>
+            <option>Hackathon</option>
+            <option>Tech Quiz</option>
+        </select>
+
+        <label>Gender</label>
+        <div class="radio-group">
+            <label><input type="radio" name="gender"> Male</label>
+            <label><input type="radio" name="gender"> Female</label>
+            <label><input type="radio" name="gender"> Other</label>
+        </div>
+
+        <button type="submit">Register Now</button>
+    </form>
+
+    <div class="footer-text">
+        © 2026 | SIT Nagpur Tech Fest
+    </div>
+</div>
+
+</body>
+</html>
